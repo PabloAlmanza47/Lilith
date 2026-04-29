@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://n40ftcbs5hxt"]
+
+[ext_resource type="PackedScene" uid="uid://bwhl25ivtiokf" path="res://character_body_2d.tscn" id="1_huxxj"]
+[ext_resource type="PackedScene" uid="uid://br6652pmmhhsr" path="res://enemy.tscn" id="2_t3l1t"]
+[ext_resource type="PackedScene" uid="uid://bbdq5jme6rpby" path="res://drop.tscn" id="3_cmk5g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t3l1t"]
+size = Vector2(1164, 20)
+
+[node name="DungeonRoom" type="Node2D" unique_id=52623879]
+
+[node name="Player" parent="." unique_id=1923977185 instance=ExtResource("1_huxxj")]
+
+[node name="topWall" type="StaticBody2D" parent="." unique_id=1299853330]
+position = Vector2(6, -142)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="topWall" unique_id=1841652769]
+position = Vector2(568, 168)
+shape = SubResource("RectangleShape2D_t3l1t")
+
+[node name="ColorRect" type="ColorRect" parent="topWall" unique_id=1041661056]
+offset_left = -14.0
+offset_top = 157.0
+offset_right = 1145.0
+offset_bottom = 179.0
+color = Color(0.012617188, 0.00058878213, 0.0010381765, 1)
+
+[node name="bottomWall" type="StaticBody2D" parent="." unique_id=685516857]
+position = Vector2(-3, 458)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bottomWall" unique_id=270079773]
+position = Vector2(586.9445, 190.42456)
+shape = SubResource("RectangleShape2D_t3l1t")
+
+[node name="ColorRect" type="ColorRect" parent="bottomWall" unique_id=654608694]
+offset_left = -3.0
+offset_top = 180.0
+offset_right = 1156.0
+offset_bottom = 202.0
+color = Color(0.012617188, 0.012617188, 0.012617188, 1)
+
+[node name="Enemy" parent="." unique_id=273561004 instance=ExtResource("2_t3l1t")]
+drop_scene = ExtResource("3_cmk5g")
+
+[node name="Enemy2" parent="." unique_id=429607 instance=ExtResource("2_t3l1t")]
+position = Vector2(365, 181)
+drop_scene = ExtResource("3_cmk5g")
